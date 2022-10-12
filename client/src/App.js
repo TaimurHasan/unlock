@@ -1,23 +1,24 @@
 import { useState, useEffect } from 'react';
+import HintOne from './components/HintOne';
 import './App.css';
 
 function App() {
-  const [combo, setCombo] = useState(null);
+  const [combo, setCombo] = useState([]);
 
   useEffect(() => {
     const createNumber = () => {
-      let string = "";
+      let comboArr = [];
 
-      while(string.length < 3) {
+      while(comboArr.length < 3) {
         const rand = (Math.floor(Math.random() * 9 + 1));
 
         // ensure no duplicate numbers
-        if (!string.includes(rand)) {
-          string += rand;
+        if (!comboArr.includes(rand)) {
+          comboArr.push(rand);
         }
       }
 
-      setCombo(Number(string));
+      setCombo(comboArr);
     }
 
     createNumber();
@@ -26,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          ok
+          <HintOne combo={combo} />
       </header>
     </div>
   );
