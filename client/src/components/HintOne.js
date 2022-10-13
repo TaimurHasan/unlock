@@ -1,37 +1,22 @@
 import React, { useEffect, useState } from "react";
+import {
+    placeOneRightAtRightPlace
+} from '../utils/algo';
 
 const HintOne = ({ combo }) => {
     const [hintOne, setHintOne] = useState([])
 
     useEffect(() => {
-        const placeOneRight = () => {
-            const arr = [];
-            const rand = Math.floor(Math.random() * 3);
-            console.log(rand)
-            while (arr.length < 3) {
-                const rand2 = Math.floor(Math.random() * 9 + 1);
-
-                if(!combo.includes(rand2)) {
-                    arr.push(rand2)
-                };
-            }
-
-            arr[rand] = combo[rand]
-            setHintOne(arr)
-        };
-
-        placeOneRight();
+        setHintOne(placeOneRightAtRightPlace(combo))
     }, [combo])
 
     return (
-        <>
-            <div>
-                {combo}
-            </div>
-            <div>
-                {hintOne}
-            </div>
-        </>
+        <div>
+            <h1>{hintOne}</h1>
+            <p>
+                This number contains one right number in the right spot
+            </p>
+        </div>
     )
 };
 
