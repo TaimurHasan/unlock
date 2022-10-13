@@ -6,7 +6,9 @@ import './App.css';
 import {
   createNumber,
   placeOneRightAtRightPlace,
-  placeOneRightAtWrongPlace
+  placeOneRightAtWrongPlace,
+  placeTwoRightAtWrongPlace,
+  placeNoRight
 } from './utils/algo';
 
 function App() {
@@ -27,7 +29,17 @@ function App() {
       key: 2,
       description: "This number contains one right number in the wrong spot",
       number: placeOneRightAtWrongPlace(combo)
-    }
+    },
+    {
+      key: 3,
+      description: "This number contains two right numbers in the wrong spots",
+      number: placeTwoRightAtWrongPlace(combo)
+    },
+    {
+      key: 4,
+      description: "This number contains no right numbers",
+      number: placeNoRight(combo)
+    },
   ]
 
   return (
