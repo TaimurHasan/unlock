@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import HintOne from './components/HintOne';
+import Hint from './components/Hint';
 import './App.css';
 
 // algorithms
 import {
   createNumber,
-  placeOneRightAtRightPlace
+  placeOneRightAtRightPlace,
+  placeOneRightAtWrongPlace
 } from './utils/algo';
 
 function App() {
@@ -15,14 +16,30 @@ function App() {
     setCombo(createNumber());
   }, []);
 
+  
+  const hints = [
+    {
+      key: 1,
+      description: "This number contains one right number in the right spot",
+      number: placeOneRightAtRightPlace(combo)
+    },
+    {
+      key: 2,
+      description: "This number contains one right number in the wrong spot",
+      number: placeOneRightAtWrongPlace(combo)
+    }
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="App-header">
         <div>
           {combo}
         </div>
-        <HintOne combo={combo} />
-      </header>
+        {hints && hints.map( ({ key, description, number}) => (
+          <Hint key={key} description={description} number={number} />
+        ))}
+      </div>
     </div>
   );
 }
