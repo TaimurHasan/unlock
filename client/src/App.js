@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Hint from './components/Hint';
+import Input from './components/Input';
 import './App.css';
 
 // algorithms
@@ -51,6 +52,7 @@ function App() {
         {hints && hints.map( ({ key, description, number}) => (
           <Hint key={key} description={description} number={number} />
         ))}
+        <Input />
       </div>
     </div>
   );
