@@ -52,7 +52,7 @@ function App() {
         {hints && hints.map( ({ key, description, number}) => (
           <Hint key={key} description={description} number={number} />
         ))}
-        <Input />
+        <Input combo={combo}/>
       </div>
     </div>
   );

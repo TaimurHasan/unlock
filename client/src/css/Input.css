@@ -1,0 +1,71 @@
+.inputBox {
+  --ReactInputVerificationCode-itemWidth: 2.5rem;
+  --ReactInputVerificationCode-itemHeight: 3.5rem;
+}
+  
+.inputBox .ReactInputVerificationCode__item {
+  position: relative;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.inputBox .ReactInputVerificationCode__item:hover {
+  cursor: pointer;
+}
+
+.inputBox .ReactInputVerificationCode__item,
+.inputBox .ReactInputVerificationCode__item.is-active {
+  box-shadow: none;
+}
+
+.inputBox .ReactInputVerificationCode__item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ebebeb;
+  transition: background-color 0.2s ease-in;
+}
+
+.inputBox .ReactInputVerificationCode__item.is-active:after {
+  background-color: #F95738;
+}
+  
+.unlock {
+  border: none;
+  margin: 20px 0;
+  padding: 10px 15px;
+  width: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: #8AA1B1;
+  transition: all 0.2s ease-in;
+}
+
+.unlock:hover {
+  background-color: rgb(113, 167, 113);
+  color: white;
+  transition: all 0.2s ease-in;
+}
+
+.unlocked {
+  background-color: rgb(113, 167, 113);
+  color: white;
+}
+
+.locked, .locked:hover {
+  background-color:  #F95738;;
+  color: white;
+  transition: all 0.2s ease-in;
+}
+
+.failedBox .ReactInputVerificationCode__item:after{
+  background-color:  #F95738;;
+}
+
+.succeededBox .ReactInputVerificationCode__item:after{
+  background-color: rgb(113, 167, 113);
+}

@@ -93,4 +93,16 @@ export const placeNoRight = (combo) => {
     }
     
     return arr;
-}
+};
+
+export const checkEquality = (combo, number) => {
+    let string = '';
+
+    for (let i = 0; i < combo.length; i++) {
+        string += combo[i];
+    };
+
+    const comboNumber = Number(string);
+
+    return comboNumber === Number(number);
+} 
