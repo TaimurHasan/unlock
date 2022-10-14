@@ -32,12 +32,17 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 60%;
+  width: 50%;
+}
+
+.hintDiv h2 {
+  width: 30%;
 }
 
 .hintDiv p {
   margin: 0 10%;
   text-align: start;
+  width: 70%;
 }
 
 @keyframes App-logo-spin {

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Header from './components/Header';
 import Hint from './components/Hint';
 import Input from './components/Input';
 import './App.css';
@@ -46,13 +47,16 @@ function App() {
   return (
     <div className="App">
       <div className="App-header">
-        <div>
+      <div>
           {combo}
         </div>
+        <Header />
+        <Input combo={combo}/>
+
         {hints && hints.map( ({ key, description, number}) => (
           <Hint key={key} description={description} number={number} />
         ))}
-        <Input combo={combo}/>
+
       </div>
     </div>
   );
