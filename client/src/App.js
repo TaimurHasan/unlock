@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Loading from './components/Loading';
 import Options from './components/Options';
 import Instructions from './components/Instructions';
 import Header from './components/Header';
@@ -63,6 +64,14 @@ function App() {
       number: hintFour
     },
   ]
+
+  if(!combo || !hintOne || !hintTwo || !hintThree || !hintFour) {
+    return ( 
+      <div className="App-header">
+        <Loading />
+      </div>  
+    )
+  }
 
   return (
     <div className="App">
