@@ -6,12 +6,13 @@ import {
     createNumber
 } from '../utils/algo'
 
-const Options = ({ setCombo, setSucceeded }) => {
+const Options = ({ setCombo, setSucceeded, setNumber }) => {
 
     const handleClick = (e) => {
         e.preventDefault();
         setCombo(createNumber());
         setSucceeded(false);
+        setNumber('');
     }
 
     return (

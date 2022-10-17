@@ -68,6 +68,7 @@ function App() {
         <Options 
           setCombo={setCombo}
           setSucceeded={setSucceeded}
+          setNumber={setNumber}
         />
         <Header />
         <Input 
