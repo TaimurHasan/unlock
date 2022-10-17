@@ -23,3 +23,9 @@
     color: white;
     transition: all 0.2s ease-in;
 }
+
+@media screen and (max-width: 575px) {
+    .optionsBar {
+        margin: 20px 0;
+    }
+}

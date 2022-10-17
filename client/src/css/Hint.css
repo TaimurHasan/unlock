@@ -29,8 +29,13 @@
 }
 
 @media screen and (max-width: 400px) {
+    .hintDiv {
+        flex-direction: column;
+    }
+
     .hintDiv h2, .hintDiv p {
         font-size: 24px;
-        margin: 5px
+        margin: 20px;
+        text-align: center;
     }
 }
