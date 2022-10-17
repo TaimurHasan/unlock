@@ -1,0 +1,25 @@
+.optionsBar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.optionsBtn {
+    border: none;
+    margin: 0 20px;
+    padding: 5px;
+    width: 100px;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #8AA1B1;
+    transition: all 0.2s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.optionsBtn:hover {
+    background-color: rgb(113, 167, 113);
+    color: white;
+    transition: all 0.2s ease-in;
+}

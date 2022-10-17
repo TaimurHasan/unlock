@@ -5,10 +5,9 @@ import { AiFillLock, AiFillUnlock } from 'react-icons/ai'
 import "../css/Input.css"
   
 
-const Input = ({ combo }) => {
-    const [number, setNumber] = useState([]);
+const Input = ({ combo, succeeded, setSucceeded, number, setNumber }) => {
+
     const [failed, setFailed] = useState(false);
-    const [succeeded, setSucceeded] = useState(false);
 
     const handleChange = (value) => {
         setNumber(value)
@@ -16,9 +15,6 @@ const Input = ({ combo }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-
-
         if(checkEquality(combo, number)) {
             setSucceeded(true)
         } else {
@@ -32,9 +28,11 @@ const Input = ({ combo }) => {
         <form onSubmit={handleSubmit}>
             <div className={`inputBox ${failed && "failedBox"} ${succeeded && "succeededBox"}`}>
                 <ReactInputVerificationCode
-                    autoFocus 
+                    autoFocus
+                    placeholder='-'
                     length={3} 
                     onChange={handleChange}
+                    value={number}
                 />
             </div>
             <button 
