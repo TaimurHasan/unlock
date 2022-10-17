@@ -27,6 +27,7 @@ function App() {
   const [hintTwo, setHintTwo] = useState();
   const [hintThree, setHintThree] = useState();
   const [hintFour, setHintFour] = useState();
+  const [hintFive, setHintFive] = useState();
 
 
 
@@ -40,6 +41,7 @@ function App() {
     setHintTwo(placeOneRightAtWrongPlace(combo));
     setHintThree(placeTwoRightAtWrongPlace(combo));
     setHintFour(placeNoRight(combo));
+    setHintFive(placeOneRightAtWrongPlace(combo));
   }, [combo])
 
   const hints = [
@@ -62,6 +64,11 @@ function App() {
       key: 4,
       description: "This number contains no right numbers",
       number: hintFour
+    },
+    {
+      key: 5,
+      description: "This number contains one right number in the wrong spot",
+      number: hintFive
     },
   ]
 

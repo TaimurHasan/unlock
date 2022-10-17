@@ -1,4 +1,5 @@
 import React from "react";
+import '../css/Hint.css'
 
 const Hint = ({ description, number }) => {
     return (

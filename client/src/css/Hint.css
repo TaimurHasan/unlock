@@ -1,0 +1,36 @@
+.hintDiv {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+}
+
+.hintDiv h2 {
+    width: 20%;
+    font-size: 40px;
+    margin: 20px;
+}
+
+.hintDiv p {
+    margin: 0 5%;
+    text-align: start;
+    width: 70%;
+    font-size: 28px;
+}
+
+@media screen and (max-width: 775px) {
+    .hintDiv {
+        width: 90%;
+    }
+
+    .hintDiv h2 {
+        font-size: 24px
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .hintDiv h2, .hintDiv p {
+        font-size: 24px;
+        margin: 5px
+    }
+}
