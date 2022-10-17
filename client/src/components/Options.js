@@ -1,12 +1,12 @@
 import React from "react";
-import { AiOutlineReload } from 'react-icons/ai';
+import { AiOutlineReload, AiOutlineInfoCircle } from 'react-icons/ai';
 import "../css/Options.css";
 
 import {
     createNumber
 } from '../utils/algo'
 
-const Options = ({ setCombo, setSucceeded, setNumber }) => {
+const Options = ({ setCombo, setSucceeded, setNumber, setModalOpen }) => {
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -15,8 +15,18 @@ const Options = ({ setCombo, setSucceeded, setNumber }) => {
         setNumber('');
     }
 
+    const handleModal = (e) => {
+        setModalOpen(true);
+    }
+
     return (
         <div className="optionsBar">
+            <button 
+                className="optionsBtn"
+                onClick={handleModal}
+            >
+                <AiOutlineInfoCircle size="25px"/>
+            </button>
             <button 
                 className="optionsBtn"
                 onClick={handleClick}

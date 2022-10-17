@@ -1,0 +1,36 @@
+.instruction-modal {
+    position: absolute;
+    backdrop-filter: blur(2px);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-text {
+    background-color: #8AA1B1;
+    color: black;
+    width: 40%;
+    padding: 3% 5%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.modal-text p, .modal-text h3 {
+    margin: 20px 0;
+    text-align: start;
+}
+
+.modal-text p {
+    font-size: 22px;
+}
+
+@media screen and (max-width: 575px) {
+    .modal-text {
+        width: 80%;
+    }
+}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Options from './components/Options';
+import Instructions from './components/Instructions';
 import Header from './components/Header';
 import Hint from './components/Hint';
 import Input from './components/Input';
@@ -18,6 +19,7 @@ function App() {
   const [combo, setCombo] = useState([]);
   const [succeeded, setSucceeded] = useState(false);
   const [number, setNumber] = useState();
+  const [modalOpen, setModalOpen] = useState(false)
 
   // hint states
   const [hintOne, setHintOne] = useState();
@@ -69,6 +71,7 @@ function App() {
           setCombo={setCombo}
           setSucceeded={setSucceeded}
           setNumber={setNumber}
+          setModalOpen={setModalOpen}
         />
         <Header />
         <Input 
@@ -81,6 +84,7 @@ function App() {
         {hints && hints.map( ({ key, description, number}) => (
           <Hint key={key} description={description} number={number} />
         ))}
+        {modalOpen && <Instructions setModalOpen={setModalOpen} />}
       </div>
     </div>
   );
